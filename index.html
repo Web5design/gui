@@ -15,6 +15,7 @@
 	<!--Modernizr.js-->
 	<script src="js/vendor/custom.modernizr.js"></script>
 
+
 	<!--Google Maps API v3-->
     <style>
       html, body, #map-canvas {
@@ -23,6 +24,41 @@
         padding: 0px
       }
     </style>
+
+    <style>
+    #slider-range .ui-slider-range { background: #77aaff; }
+    #slider-range .ui-slider-handle { background: #ddddff; }
+    #slider-range .ui-slider-handle { hover: { background:;}
+    </style>
+
+<!-- jQuery Slider script -->
+  <link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="development-bundle/themes/base/jquery.ui.all.css">
+  <script src="development-bundle/jquery-1.9.1.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+  <script src="development-bundle/ui/jquery.ui.slider.js"></script>
+  <script src="js/jquery-ui-1.10.3.custom.js"></script>
+  <link rel="stylesheet" href="development-bundle/demos.css">
+  <script>
+  $(function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 24,
+      values: [ 0, 24 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.values[ 0 ] + ":00 - " + ui.values[ 1 ] + ":00");
+      }
+    });
+    $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + ":00 - " + $( "#slider-range" ).slider( "values", 1 ) + ":00");
+  });
+  </script>
+
+
+
+<!-- Google Maps script -->    
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	<script>
 
@@ -44,7 +80,7 @@
       // Draw a logo wherever there is a bike station
   		var stationLogo = 'cbLogo-16.png';
       for (station=0; station < lat.length; station++) {
-        console.log(station + ": " + lat[station] + ", " + lng[station]);
+        // console.log(station + ": " + lat[station] + ", " + lng[station]);
         var stationLatLng = new google.maps.LatLng(lat[station], lng[station]);
         var marker = new google.maps.Marker({
           position: stationLatLng,
@@ -75,13 +111,13 @@
       });
       connections.push(connection);
       connection.setMap(map);
-      console.log(connections[connections.length-1]);
+      // console.log(connections[connections.length-1]);
     }
 
     function removeLines() {
       for (var index in connections) {
         var connection = connections[index];
-        console.log(connection);
+        // console.log(connection);
         connection.setMap(null);        
       }
     }
@@ -120,6 +156,9 @@
         <div class="large-8 columns">
         	<div class="panel">
            	<p>TIMELINE</p>
+            <label for="amount">Time range:</label>
+            <input type="text" id="amount" style="border:0; color#9900ff; font-weight:bold;" />
+            <div id="slider-range"></div>
         	</div>
         	<div id="map-canvas">
         	</div>
