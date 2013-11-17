@@ -1,8 +1,10 @@
 # app.py
 # Starts HTTPServer with an application instance
+
 import tornado.ioloop
 import tornado.web
 import os
+
 class TextHandler(tornado.web.RequestHandler):
     def get(self):
         self.write("Hello, world")
@@ -26,7 +28,7 @@ class GuiHTMLHandler(tornado.web.RequestHandler):
 if __name__ == "__main__":
     dirname = os.path.dirname(__file__)
     settings = {
-        "static_path" : os.path.join(os.path.dirname(file), "static"),
+        "static_path" : os.path.join(dirname, "static"),
         "template_path" : os.path.join(dirname, "template")
     }
 

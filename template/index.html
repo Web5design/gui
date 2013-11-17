@@ -8,24 +8,24 @@
 	<title>Bikeshare Comps</title>
 
   
-	<link rel="stylesheet" href="css/foundation.css">
-  <link rel="stylesheet" href="css/bikeshare-custom.css">
+	<link rel="stylesheet" href="/static/css/foundation.css">
+	<link rel="stylesheet" href="/static/css/bikeshare-custom.css">
 
-  <script type="text/javascript" href="js/bikeshare-custom.js">
+	<script type="text/javascript" src="/static/js/bikeshare-custom.js">
 
 
 	<!--Modernizr.js-->
-	<script src="js/vendor/custom.modernizr.js"></script>
+	<script src="/static/js/vendor/custom.modernizr.js"></script>
 
 
 	<!--Google Maps API v3-->
-    <style>
-      html, body, #map-canvas {
-        height: 400px;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
+	<style>
+	  html, body, #map-canvas {
+          height: 400px;
+          margin: 0px;
+          padding: 0px
+	  }
+	</style>
 
     <style>
     #slider-range .ui-slider-range { background: #77aaff; }
@@ -34,15 +34,15 @@
     </style>
 
 <!-- jQuery Slider script -->
-  <link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-  <link rel="stylesheet" href="development-bundle/themes/base/jquery.ui.all.css">
-  <script src="development-bundle/jquery-1.9.1.js"></script>
-  <script src="development-bundle/ui/jquery.ui.core.js"></script>
-  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
-  <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
-  <script src="development-bundle/ui/jquery.ui.slider.js"></script>
-  <script src="js/jquery-ui-1.10.3.custom.js"></script>
-  <link rel="stylesheet" href="development-bundle/demos.css">
+  <link href="/static/css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/development-bundle/themes/base/jquery.ui.all.css">
+  <script src="/static/development-bundle/jquery-1.9.1.js"></script>
+  <script src="/static/development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="/static/development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="/static/development-bundle/ui/jquery.ui.mouse.js"></script>
+  <script src="/static/development-bundle/ui/jquery.ui.slider.js"></script>
+  <script src="/static/js/jquery-ui-1.10.3.custom.js"></script>
+  <link rel="stylesheet" href="/static/development-bundle/demos/demos.css">
   <script>
   $(function() {
 
@@ -66,7 +66,7 @@
 
 <!-- Google Maps script -->    
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-	<script src="js/bikeshare-googlemaps.js"></script>
+	<script src="/static/js/bikeshare-googlemaps.js"></script>
 
 </head>
 <body>
@@ -110,11 +110,11 @@
 
   <script>
   document.write('<script src=' +
-  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  ('__proto__' in {} ? '/static/js/vendor/zepto' : '/static/js/vendor/jquery') +
   '.js><\/script>')
   </script>
   
-  <script src="js/foundation.min.js"></script>
+  <script src="/static/js/foundation.min.js"></script>
                 
   <script>
     $(document).foundation();
